@@ -9,5 +9,7 @@
 	<modules>
 		<module>flour-utils-common</module>
 		<module>flour-utils-web</module>
+		<module>flour-utils-data</module>
+		<module>flour-utils-service</module>
 	</modules>
 </project>
