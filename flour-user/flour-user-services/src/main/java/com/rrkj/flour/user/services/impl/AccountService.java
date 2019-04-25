@@ -1,9 +1,9 @@
 /**
- * 文件名：UserService.java
+ * 文件名：AccountService.java
  *
  * 创建人：jinisu - jinisu@163.com
  *
- * 创建时间：2019年4月25日 下午3:39:09
+ * 创建时间：2019年4月25日 下午6:41:11
  *
  * 版权所有：软软科技
  */
@@ -13,9 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
-import com.rrkj.flour.user.entities.User;
-import com.rrkj.flour.user.repositories.UserRepository;
-import com.rrkj.flour.user.services.IUserService;
+import com.rrkj.flour.user.entities.Account;
+import com.rrkj.flour.user.repositories.AccountRepository;
+import com.rrkj.flour.user.services.IAccountService;
 import com.rrkj.flour.utils.service.CrudService;
 
 /**
@@ -28,13 +28,13 @@ import com.rrkj.flour.utils.service.CrudService;
  * @version 1.0
  */
 @Service
-public class UserService extends CrudService<User, Long> implements IUserService {
+public class AccountService extends CrudService<Account, Long> implements IAccountService {
 
 	@Autowired
-	private UserRepository repository;
+	private AccountRepository repository;
 
 	@Override
-	public CrudRepository<User, Long> getRepository() {
+	public CrudRepository<Account, Long> getRepository() {
 		return repository;
 	}
 

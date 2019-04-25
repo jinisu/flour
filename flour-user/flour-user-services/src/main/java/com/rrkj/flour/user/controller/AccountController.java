@@ -1,9 +1,9 @@
 /**
- * 文件名：UserController.java
+ * 文件名：AccountController.java
  *
  * 创建人：jinisu - jinisu@163.com
  *
- * 创建时间：2019年4月25日 下午3:49:57
+ * 创建时间：2019年4月25日 下午6:42:57
  *
  * 版权所有：软软科技
  */
@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rrkj.flour.user.entities.User;
-import com.rrkj.flour.user.services.IUserService;
+import com.rrkj.flour.user.entities.Account;
+import com.rrkj.flour.user.services.IAccountService;
 import com.rrkj.flour.utils.service.ICrudService;
 import com.rrkj.flour.utils.web.CrudController;
 
@@ -28,14 +28,14 @@ import com.rrkj.flour.utils.web.CrudController;
  * @version 1.0
  */
 @RestController()
-@RequestMapping("user")
-public class UserController extends CrudController<User, Long> {
+@RequestMapping("account")
+public class AccountController extends CrudController<Account, Long> {
 
 	@Autowired
-	private IUserService service;
+	private IAccountService service;
 
 	@Override
-	public ICrudService<User, Long> getService() {
+	public ICrudService<Account, Long> getService() {
 		return service;
 	}
 

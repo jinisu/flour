@@ -9,11 +9,9 @@
  */
 package com.rrkj.flour.user.repositories;
 
-import java.util.Optional;
-
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.rrkj.flour.data.ICrudRepository;
 import com.rrkj.flour.user.entities.User;
 
 /**
@@ -26,61 +24,6 @@ import com.rrkj.flour.user.entities.User;
  * @version 1.0
  */
 @Repository
-public class UserRepository implements ICrudRepository<User, Long> {
-
-	@Override
-	public User save(User entity) {
-		return null;
-	}
-
-	@Override
-	public Iterable<User> saveAll(Iterable<User> entities) {
-		return null;
-	}
-
-	@Override
-	public Optional<User> findById(Long id) {
-		return null;
-	}
-
-	@Override
-	public boolean existsById(Long id) {
-		return false;
-	}
-
-	@Override
-	public Iterable<User> findAll() {
-		return null;
-	}
-
-	@Override
-	public Iterable<User> findAllById(Iterable<Long> ids) {
-		return null;
-	}
-
-	@Override
-	public long count() {
-		return 0;
-	}
-
-	@Override
-	public int deleteById(Long id) {
-		return 0;
-	}
-
-	@Override
-	public int delete(User entity) {
-		return 0;
-	}
-
-	@Override
-	public int deleteAll(Iterable<User> entities) {
-		return 0;
-	}
-
-	@Override
-	public int deleteAll() {
-		return 0;
-	}
+public interface UserRepository extends CrudRepository<User, Long> {
 
 }

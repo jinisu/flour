@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @version 1.0
  */
 @EnableTransactionManagement
-@SpringBootApplication(scanBasePackages = { "com.rrkj.flour.user" })
+@SpringBootApplication(scanBasePackages = { "com.rrkj.flour.user", "com.rrkj.flour.utils.web.config" })
 public class FlourUserApplication {
 
 	/**

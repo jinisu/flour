@@ -10,14 +10,13 @@
 package com.rrkj.flour.user.entities;
 
 import javax.persistence.Column;
-import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.rrkj.flour.data.converter.LongToTimestampConverter;
+import com.rrkj.flour.data.StatefulEntity;
 
 /**
  * <p> Title: [名称]</p>
@@ -30,7 +29,7 @@ import com.rrkj.flour.data.converter.LongToTimestampConverter;
  */
 @Entity
 @Table(name = "rrkj_flour_user_account")
-public class Account {
+public class Account extends StatefulEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,17 +49,6 @@ public class Account {
 
 	@Column(length = 32, nullable = false)
 	public long userid;
-
-	@Column(nullable = false)
-	@Convert(converter = LongToTimestampConverter.class)
-	private Long ctime = System.currentTimeMillis();
-
-	@Column(nullable = false)
-	@Convert(converter = LongToTimestampConverter.class)
-	private Long utime = System.currentTimeMillis();
-
-	@Column(length = 3, nullable = false)
-	public short status = 1;
 
 	public long getId() {
 		return id;
@@ -108,29 +96,5 @@ public class Account {
 
 	public void setUserid(long userid) {
 		this.userid = userid;
-	}
-
-	public Long getCtime() {
-		return ctime;
-	}
-
-	public void setCtime(Long ctime) {
-		this.ctime = ctime;
-	}
-
-	public Long getUtime() {
-		return utime;
-	}
-
-	public void setUtime(Long utime) {
-		this.utime = utime;
-	}
-
-	public short getStatus() {
-		return status;
-	}
-
-	public void setStatus(short status) {
-		this.status = status;
 	}
 }

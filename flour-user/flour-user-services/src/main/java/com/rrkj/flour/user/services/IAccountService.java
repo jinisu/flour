@@ -1,18 +1,16 @@
 /**
- * 文件名：AccountRepository.java
+ * 文件名：IAccountService.java
  *
  * 创建人：jinisu - jinisu@163.com
  *
- * 创建时间：2019年4月25日 下午2:05:09
+ * 创建时间：2019年4月25日 下午6:39:59
  *
  * 版权所有：软软科技
  */
-package com.rrkj.flour.user.repositories;
-
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+package com.rrkj.flour.user.services;
 
 import com.rrkj.flour.user.entities.Account;
+import com.rrkj.flour.utils.service.ICrudService;
 
 /**
  * <p> Title: [名称]</p>
@@ -23,7 +21,6 @@ import com.rrkj.flour.user.entities.Account;
  * @author jinisu - jinisu@163.com
  * @version 1.0
  */
-@Repository
-public interface AccountRepository extends CrudRepository<Account, Long> {
+public interface IAccountService extends ICrudService<Account, Long> {
 
 }
