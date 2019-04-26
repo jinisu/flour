@@ -9,6 +9,8 @@
  */
 package com.rrkj.flour.user.services;
 
+import java.util.List;
+
 import com.rrkj.flour.user.entities.User;
 import com.rrkj.flour.utils.service.ICrudService;
 
@@ -23,4 +25,11 @@ import com.rrkj.flour.utils.service.ICrudService;
  */
 public interface IUserService extends ICrudService<User, Long> {
 
+	public List<User> queryByUser(User user);
+
+	public List<User> queryByNameAndLabel(String name, String label);
+
+	public List<User> queryByPhone(String name);
+
+	public User queryByUuid(String uuid);
 }

@@ -23,4 +23,7 @@ import com.rrkj.flour.utils.service.ICrudService;
  */
 public interface IOauth2ApplicationService extends ICrudService<Oauth2Application, Long> {
 
+	public Oauth2Application findByAppKey(String clientId);
+
+	public Oauth2Application findByAppSecret(String clientSecret);
 }

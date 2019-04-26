@@ -39,6 +39,9 @@ public class Oauth2User extends StatefulEntity {
 	public String username;
 
 	@Column(length = 128, nullable = false)
+	public String phone;
+
+	@Column(length = 128, nullable = false)
 	public String password;
 
 	@Column(length = 128, nullable = false)
@@ -96,5 +99,13 @@ public class Oauth2User extends StatefulEntity {
 
 	public void setSalt(String salt) {
 		this.salt = salt;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getPhone() {
+		return phone;
 	}
 }

@@ -23,4 +23,8 @@ import com.rrkj.flour.utils.service.ICrudService;
  */
 public interface IOauth2UserService extends ICrudService<Oauth2User, Long> {
 
+	public Oauth2User findByUsername(String username);
+
+	public boolean checkOauthUser(String username, String password, String salt, String password2);
+
 }

@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @version 1.0
  */
 @EnableTransactionManagement
-@SpringBootApplication(scanBasePackages = { "com.rrkj.flour.oauth2", "com.rrkj.flour.utils.web.config" })
+@SpringBootApplication(scanBasePackages = { "com.rrkj.flour.oauth2" })
 public class FlourOauth2Application {
 
 	/**

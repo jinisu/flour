@@ -29,4 +29,14 @@ import com.rrkj.flour.utils.service.CrudService;
 public class Oauth2ApplicationService extends CrudService<Oauth2Application, Long, Oauth2ApplicationRepository>
 		implements IOauth2ApplicationService {
 
+	@Override
+	public Oauth2Application findByAppKey(String clientId) {
+		return null;
+	}
+
+	@Override
+	public Oauth2Application findByAppSecret(String clientSecret) {
+		return null;
+	}
+
 }

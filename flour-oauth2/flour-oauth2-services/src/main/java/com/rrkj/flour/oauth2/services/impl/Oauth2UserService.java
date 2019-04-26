@@ -9,6 +9,7 @@
  */
 package com.rrkj.flour.oauth2.services.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rrkj.flour.oauth2.entities.Oauth2User;
@@ -28,5 +29,22 @@ import com.rrkj.flour.utils.service.CrudService;
 @Service
 public class Oauth2UserService extends CrudService<Oauth2User, Long, Oauth2UserRepository>
 		implements IOauth2UserService {
+
+	@Autowired
+	private PasswordHelper passwordHelper;
+
+	@Autowired
+	private Oauth2UserRepository repository;
+
+	@Override
+	public Oauth2User findByUsername(String username) {
+		return repository.findByUsername(username);
+	}
+
+	@Override
+	public boolean checkOauthUser(String username, String password, String salt, String encryptpwd) {
+		String pwd = passwordHelper.encryptPassword(username, password, salt);
+		return pwd.equals(encryptpwd);
+	}
 
 }

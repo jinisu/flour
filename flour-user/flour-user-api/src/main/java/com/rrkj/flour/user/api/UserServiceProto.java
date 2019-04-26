@@ -15,15 +15,50 @@ public final class UserServiceProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HelloRequest_descriptor;
+    internal_static_TUser_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HelloRequest_fieldAccessorTable;
+      internal_static_TUser_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HelloReply_descriptor;
+    internal_static_TAccount_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HelloReply_fieldAccessorTable;
+      internal_static_TAccount_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TString_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TString_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TId_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TId_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TRBool_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TRBool_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TNameAndLabel_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TNameAndLabel_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TUseridAndType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TUseridAndType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ListUser_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ListUser_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ListAccount_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ListAccount_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -33,11 +68,39 @@ public final class UserServiceProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021UserService.proto\"\034\n\014HelloRequest\022\014\n\004n" +
-      "ame\030\001 \001(\t\"\035\n\nHelloReply\022\017\n\007message\030\001 \001(\t" +
-      "27\n\013UserService\022(\n\010SayHello\022\r.HelloReque" +
-      "st\032\013.HelloReply\"\000B0\n\027com.rrkj.flour.user" +
-      ".apiB\020UserServiceProtoP\001\210\001\001b\006proto3"
+      "\n\021UserService.proto\"\227\002\n\005TUser\022\n\n\002id\030\001 \001(" +
+      "\003\022\014\n\004name\030\002 \001(\t\022\020\n\010nickname\030\003 \001(\t\022\014\n\004typ" +
+      "e\030\004 \001(\t\022\013\n\003uid\030\005 \001(\t\022\014\n\004icon\030\006 \001(\t\022\r\n\005ph" +
+      "one\030\007 \001(\t\022\r\n\005email\030\010 \001(\t\022\020\n\010birthday\030\t \001" +
+      "(\t\022!\n\006gender\030\n \001(\0162\021.TUser.GenderType\022\r\n" +
+      "\005label\030\013 \001(\t\022\016\n\006status\030\014 \001(\005\022\r\n\005utime\030\r " +
+      "\001(\003\022\r\n\005ctime\030\016 \001(\003\")\n\nGenderType\022\n\n\006UNKO" +
+      "WN\020\000\022\007\n\003NAN\020\001\022\006\n\002NV\020\002\"\245\001\n\010TAccount\022\n\n\002id" +
+      "\030\001 \001(\003\022\016\n\006openid\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\014\n\004" +
+      "uuid\030\004 \001(\t\022\r\n\005label\030\005 \001(\t\022\016\n\006status\030\006 \001(" +
+      "\005\022\016\n\006userid\030\007 \001(\003\022\024\n\004user\030\010 \001(\0132\006.TUser\022" +
+      "\r\n\005ctime\030\t \001(\003\022\r\n\005utime\030\n \001(\003\"\026\n\007TString" +
+      "\022\013\n\003str\030\001 \001(\t\"\021\n\003TId\022\n\n\002id\030\001 \001(\003\"\025\n\006TRBo" +
+      "ol\022\013\n\003res\030\001 \001(\010\",\n\rTNameAndLabel\022\014\n\004name" +
+      "\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\".\n\016TUseridAndType\022" +
+      "\016\n\006userid\030\001 \001(\003\022\014\n\004type\030\002 \001(\t\" \n\010ListUse" +
+      "r\022\024\n\004list\030\001 \003(\0132\006.TUser\"&\n\013ListAccount\022\027" +
+      "\n\004list\030\001 \003(\0132\t.TAccount2\247\002\n\017UserGrpcServ" +
+      "ice\022!\n\013QueryByUuid\022\010.TString\032\006.TUser\"\000\022%" +
+      "\n\014queryByPhone\022\010.TString\032\t.ListUser\"\000\022\033\n" +
+      "\tqueryById\022\004.TId\032\006.TUser\"\000\022\"\n\013queryByUse" +
+      "r\022\006.TUser\032\t.ListUser\"\000\0222\n\023queryByNameAnd" +
+      "Label\022\016.TNameAndLabel\032\t.ListUser\"\000\022\032\n\006cr" +
+      "eate\022\006.TUser\032\006.TUser\"\000\022\032\n\006update\022\006.TUser" +
+      "\032\006.TUser\"\000\022\035\n\nremoveById\022\004.TId\032\007.TRBool\"" +
+      "\0002\377\001\n\022AccountGrpcService\022&\n\nqueryByUid\022\010" +
+      ".TString\032\014.ListAccount\"\000\022%\n\rqueryByUseri" +
+      "d\022\004.TId\032\014.ListAccount\"\000\0227\n\024queryByUserid" +
+      "AndType\022\017.TUseridAndType\032\014.ListAccount\"\000" +
+      "\022 \n\006create\022\t.TAccount\032\t.TAccount\"\000\022 \n\006up" +
+      "date\022\t.TAccount\032\t.TAccount\"\000\022\035\n\nremoveBy" +
+      "Id\022\004.TId\032\007.TRBool\"\000B0\n\027com.rrkj.flour.us" +
+      "er.apiB\020UserServiceProtoP\001\210\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -51,18 +114,60 @@ public final class UserServiceProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_HelloRequest_descriptor =
+    internal_static_TUser_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_HelloRequest_fieldAccessorTable = new
+    internal_static_TUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HelloRequest_descriptor,
-        new java.lang.String[] { "Name", });
-    internal_static_HelloReply_descriptor =
+        internal_static_TUser_descriptor,
+        new java.lang.String[] { "Id", "Name", "Nickname", "Type", "Uid", "Icon", "Phone", "Email", "Birthday", "Gender", "Label", "Status", "Utime", "Ctime", });
+    internal_static_TAccount_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_HelloReply_fieldAccessorTable = new
+    internal_static_TAccount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HelloReply_descriptor,
-        new java.lang.String[] { "Message", });
+        internal_static_TAccount_descriptor,
+        new java.lang.String[] { "Id", "Openid", "Type", "Uuid", "Label", "Status", "Userid", "User", "Ctime", "Utime", });
+    internal_static_TString_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_TString_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TString_descriptor,
+        new java.lang.String[] { "Str", });
+    internal_static_TId_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_TId_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TId_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_TRBool_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_TRBool_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TRBool_descriptor,
+        new java.lang.String[] { "Res", });
+    internal_static_TNameAndLabel_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_TNameAndLabel_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TNameAndLabel_descriptor,
+        new java.lang.String[] { "Name", "Label", });
+    internal_static_TUseridAndType_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_TUseridAndType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TUseridAndType_descriptor,
+        new java.lang.String[] { "Userid", "Type", });
+    internal_static_ListUser_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_ListUser_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ListUser_descriptor,
+        new java.lang.String[] { "List", });
+    internal_static_ListAccount_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_ListAccount_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ListAccount_descriptor,
+        new java.lang.String[] { "List", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

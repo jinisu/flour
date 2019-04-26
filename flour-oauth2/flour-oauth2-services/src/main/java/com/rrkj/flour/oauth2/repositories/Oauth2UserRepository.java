@@ -26,4 +26,5 @@ import com.rrkj.flour.oauth2.entities.Oauth2User;
 @Repository
 public interface Oauth2UserRepository extends CrudRepository<Oauth2User, Long> {
 
+	public Oauth2User findByUsername(String username);
 }

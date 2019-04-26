@@ -6,17 +6,102 @@ option java_package = "com.rrkj.flour.user.api";
 option java_outer_classname = "UserServiceProto";
 option java_generic_services = true;
 
-// The greeting service definition.
-service UserService {
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
+message TUser {
+	enum GenderType {
+		UNKOWN = 0;
+		NAN = 1;
+		NV = 2;
+	} 
+	int64	id		= 1;
+	string	name	= 2;
+	string	nickname= 3;
+	string	type	= 4;
+	string	uid		= 5;
+	string	icon	= 6;
+	string	phone	= 7;
+	string	email	= 8;
+	string	birthday= 9;
+	GenderType	gender = 10;
+	string	label	= 11;
+	int32	status	= 12;
+	int64	utime   = 13;
+	int64	ctime	= 14;
+}
+
+message TAccount{
+	int64	id		= 1;
+	string	openid	= 2;
+	string	type	= 3;
+	string	uuid	= 4;
+	string	label	= 5;
+	int32	status	= 6;
+	int64	userid	= 7;
+	TUser	user	= 8;
+	int64	ctime	= 9;
+	int64	utime	= 10;
+}
+
+message TString{
+	string str	= 1;
+}
+
+message TId{
+	int64	id	= 1;
+}
+
+message TRBool{
+	bool	res = 1;
+}
+
+message TNameAndLabel{
+	string	name	= 1;
+	string	label	= 2;
+}
+
+message TUseridAndType{
+	int64	userid	= 1;
+	string	type	= 2;
+}
+
+message ListUser{
+	repeated TUser list	= 1;
+}
+
+message ListAccount{
+	repeated TAccount list	= 1;
 }
 
 
-message HelloRequest {
-  string name = 1;
+service UserGrpcService {
+
+	rpc QueryByUuid(TString) returns (TUser) {}
+	
+	rpc queryByPhone(TString) returns (ListUser) {}
+	
+	rpc queryById(TId) returns (TUser) {}
+	
+	rpc queryByUser(TUser) returns (ListUser) {}
+	
+	rpc queryByNameAndLabel(TNameAndLabel) returns (ListUser) {}
+	
+	rpc create (TUser) returns (TUser) {}
+	
+	rpc update (TUser) returns (TUser) {}
+	
+	rpc removeById (TId) returns (TRBool) {}
 }
 
+service AccountGrpcService{
 
-message HelloReply {
-  string message = 1;
+	rpc queryByUid (TString) returns (ListAccount) {}
+
+	rpc queryByUserid (TId) returns (ListAccount) {}
+	
+	rpc queryByUseridAndType (TUseridAndType) returns (ListAccount) {}
+	
+	rpc create (TAccount) returns (TAccount) {}
+	
+	rpc update (TAccount) returns (TAccount) {}
+	
+	rpc removeById (TId) returns (TRBool) {}
 }

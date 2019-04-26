@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.rrkj.flour.oauth2.entities.Oauth2User;
 import com.rrkj.flour.oauth2.services.IOauth2UserService;
-import com.rrkj.flour.user.api.HelloReply;
-import com.rrkj.flour.user.api.HelloRequest;
-import com.rrkj.flour.user.api.UserServiceGrpc.UserServiceBlockingStub;
+//import com.rrkj.flour.user.api.HelloReply;
+//import com.rrkj.flour.user.api.HelloRequest;
+//import com.rrkj.flour.user.api.UserServiceGrpc.UserServiceBlockingStub;
 import com.rrkj.flour.utils.web.CrudController;
 
 import net.devh.boot.grpc.client.inject.GrpcClient;
@@ -34,16 +34,16 @@ import net.devh.boot.grpc.client.inject.GrpcClient;
 @RequestMapping("user")
 public class Oauth2UserController extends CrudController<Oauth2User, Long, IOauth2UserService> {
 
-	@GrpcClient("user-service")
-	private UserServiceBlockingStub greeterStub;
-
-	@RequestMapping("test")
-	public String test() {
-		HelloReply reply = greeterStub.sayHello(HelloRequest.newBuilder().setName("dddddddd").build());
-
-		if (reply == null) {
-			return "null";
-		}
-		return reply.getMessage();
-	}
+//	@GrpcClient("user-service")
+//	private UserServiceBlockingStub greeterStub;
+//
+//	@RequestMapping("test")
+//	public String test() {
+//		HelloReply reply = greeterStub.sayHello(HelloRequest.newBuilder().setName("dddddddd").build());
+//
+//		if (reply == null) {
+//			return "null";
+//		}
+//		return reply.getMessage();
+//	}
 }

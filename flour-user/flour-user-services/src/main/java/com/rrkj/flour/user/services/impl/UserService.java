@@ -9,6 +9,8 @@
  */
 package com.rrkj.flour.user.services.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.rrkj.flour.user.entities.User;
@@ -28,5 +30,24 @@ import com.rrkj.flour.utils.service.CrudService;
 @Service
 public class UserService extends CrudService<User, Long, UserRepository> implements IUserService {
 
+	@Override
+	public List<User> queryByUser(User user) {
+		return null;
+	}
+
+	@Override
+	public List<User> queryByNameAndLabel(String name, String label) {
+		return null;
+	}
+
+	@Override
+	public List<User> queryByPhone(String name) {
+		return null;
+	}
+
+	@Override
+	public User queryByUuid(String uuid) {
+		return null;
+	}
 
 }
