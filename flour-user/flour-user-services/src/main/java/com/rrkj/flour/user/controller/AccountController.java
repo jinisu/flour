@@ -9,13 +9,11 @@
  */
 package com.rrkj.flour.user.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rrkj.flour.user.entities.Account;
 import com.rrkj.flour.user.services.IAccountService;
-import com.rrkj.flour.utils.service.ICrudService;
 import com.rrkj.flour.utils.web.CrudController;
 
 /**
@@ -29,14 +27,6 @@ import com.rrkj.flour.utils.web.CrudController;
  */
 @RestController()
 @RequestMapping("account")
-public class AccountController extends CrudController<Account, Long> {
-
-	@Autowired
-	private IAccountService service;
-
-	@Override
-	public ICrudService<Account, Long> getService() {
-		return service;
-	}
+public class AccountController extends CrudController<Account, Long, IAccountService> {
 
 }

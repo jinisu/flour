@@ -9,8 +9,6 @@
  */
 package com.rrkj.flour.user.services.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import com.rrkj.flour.user.entities.User;
@@ -28,14 +26,7 @@ import com.rrkj.flour.utils.service.CrudService;
  * @version 1.0
  */
 @Service
-public class UserService extends CrudService<User, Long> implements IUserService {
+public class UserService extends CrudService<User, Long, UserRepository> implements IUserService {
 
-	@Autowired
-	private UserRepository repository;
-
-	@Override
-	public CrudRepository<User, Long> getRepository() {
-		return repository;
-	}
 
 }

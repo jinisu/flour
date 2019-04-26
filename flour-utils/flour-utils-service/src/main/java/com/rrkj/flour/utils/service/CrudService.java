@@ -15,6 +15,7 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 
 import com.rrkj.flour.data.Pagination;
@@ -30,9 +31,14 @@ import com.rrkj.flour.data.constants.ResourceConstants;
  * @author jinisu - jinisu@163.com
  * @version 1.0
  */
-public abstract class CrudService<T, K> implements ICrudService<T, K> {
+public class CrudService<T, K, R extends CrudRepository<T, K>> implements ICrudService<T, K> {
 
-	public abstract CrudRepository<T, K> getRepository();
+	@Autowired
+	protected R repository;
+
+	public CrudRepository<T, K> getRepository() {
+		return repository;
+	}
 
 	@Override
 	public Pagination<T> queryAll(Integer pageSize, Integer page) {

@@ -12,5 +12,6 @@
 		<module>flour-oauth2</module>
 		<module>flour-spring-parent</module>
 		<module>flour-user</module>
+		<module>flour-grpc-parent</module>
 	</modules>
 </project>

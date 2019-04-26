@@ -33,10 +33,14 @@ import com.rrkj.flour.utils.web.exception.ExceptionCode;
  */
 @RestController
 @RequestMapping(value = "")
-public abstract class CrudController<T, K> implements ICrudController<T, K> {
+public class CrudController<T, K, S extends ICrudService<T, K>> implements ICrudController<T, K> {
 
 	@Autowired
-	public abstract ICrudService<T, K> getService();
+	protected S service;
+
+	public ICrudService<T, K> getService() {
+		return service;
+	}
 
 	@Override
 	@RequestMapping(value = "queryAll")
