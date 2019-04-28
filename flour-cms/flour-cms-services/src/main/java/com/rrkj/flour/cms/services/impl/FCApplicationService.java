@@ -9,6 +9,7 @@
  */
 package com.rrkj.flour.cms.services.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rrkj.flour.cms.entities.FCApplication;
@@ -28,5 +29,14 @@ import com.rrkj.flour.utils.service.CrudService;
 @Service
 public class FCApplicationService extends CrudService<FCApplication, Long, FCApplicationRepository>
 		implements IFCApplicationService {
+
+	@Autowired
+	private FCApplicationRepository repository;
+
+	@Override
+	public FCApplication queryByCode(String code) {
+
+		return repository.findByCode(code);
+	}
 
 }

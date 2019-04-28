@@ -24,6 +24,8 @@ import com.rrkj.flour.cms.entities.FCApplication;
  * @version 1.0
  */
 @Repository
-public interface FCApplicationRepository extends CrudRepository< FCApplication, Long> {
+public interface FCApplicationRepository extends CrudRepository<FCApplication, Long> {
+
+	public FCApplication findByCode(String code);
 
 }

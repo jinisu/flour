@@ -52,7 +52,7 @@ public class FCApplication extends StatefulEntity {
 	private String indexv;
 
 	@Column(length = 1024, nullable = false)
-	private String srcDir;
+	private String root;
 
 	@Column(length = 3, nullable = false)
 	private short publishStatus = 1;
@@ -111,14 +111,6 @@ public class FCApplication extends StatefulEntity {
 		this.indexv = indexv;
 	}
 
-	public String getSrcDir() {
-		return srcDir;
-	}
-
-	public void setSrcDir(String srcDir) {
-		this.srcDir = srcDir;
-	}
-
 	public short getPublishStatus() {
 		return publishStatus;
 	}
@@ -141,5 +133,13 @@ public class FCApplication extends StatefulEntity {
 
 	public void setContentId(String contentId) {
 		this.contentId = contentId;
+	}
+
+	public void setRoot(String root) {
+		this.root = root;
+	}
+
+	public String getRoot() {
+		return root;
 	}
 }

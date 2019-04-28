@@ -1,16 +1,15 @@
 /**
- * 文件名：IFCApplicationService.java
+ * 文件名：IWebServerService.java
  *
  * 创建人：jinisu - jinisu@163.com
  *
- * 创建时间：2019年4月28日 下午6:46:28
+ * 创建时间：2019年4月28日 下午10:14:12
  *
  * 版权所有：软软科技
  */
 package com.rrkj.flour.cms.services;
 
-import com.rrkj.flour.cms.entities.FCApplication;
-import com.rrkj.flour.utils.service.ICrudService;
+import org.springframework.http.ResponseEntity;
 
 /**
  * <p> Title: [名称]</p>
@@ -21,8 +20,7 @@ import com.rrkj.flour.utils.service.ICrudService;
  * @author jinisu - jinisu@163.com
  * @version 1.0
  */
-public interface IFCApplicationService extends ICrudService<FCApplication, Long> {
+public interface IWebServerService {
 
-	public FCApplication queryByCode(String code);
-
+	public ResponseEntity<byte[]> doRequest(String code, String path, String requesturi);
 }
