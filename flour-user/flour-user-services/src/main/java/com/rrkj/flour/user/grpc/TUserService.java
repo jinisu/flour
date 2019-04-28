@@ -44,12 +44,14 @@ public class TUserService extends UserGrpcServiceGrpc.UserGrpcServiceImplBase {
 	 */
 	public void queryByUuid(TString request, StreamObserver<TUser> responseObserver) {
 		String uuid = request.getStr();
+		// TODO
 	}
 
 	/**
 	 */
 	public void queryByPhone(TString request, StreamObserver<ListUser> responseObserver) {
 		String phone = request.getStr();
+		// TODO
 	}
 
 	/**
@@ -69,13 +71,13 @@ public class TUserService extends UserGrpcServiceGrpc.UserGrpcServiceImplBase {
 	/**
 	 */
 	public void queryByUser(TUser request, StreamObserver<ListUser> responseObserver) {
-
+		// TODO
 	}
 
 	/**
 	 */
 	public void queryByNameAndLabel(TNameAndLabel request, StreamObserver<ListUser> responseObserver) {
-
+		// TODO
 	}
 
 	/**
