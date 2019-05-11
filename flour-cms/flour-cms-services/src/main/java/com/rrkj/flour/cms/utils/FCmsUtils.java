@@ -32,8 +32,8 @@ public class FCmsUtils {
 			return MediaType.APPLICATION_OCTET_STREAM;
 		}
 		extension = extension.toLowerCase();
-		if (extension.equals("html")) {
-			return MediaType.TEXT_HTML;
+		if (extension.equals("jpg")) {
+			return MediaType.IMAGE_JPEG;
 		}
 		if (extension.equals("css")) {
 			return new MediaType("text", "css");
@@ -42,7 +42,7 @@ public class FCmsUtils {
 			return new MediaType("application", "javascript");
 		}
 		if (extension.equals("png")) {
-			return MediaType.TEXT_HTML;
+			return MediaType.IMAGE_PNG;
 		}
 		if (extension.equals("html")) {
 			return MediaType.TEXT_HTML;

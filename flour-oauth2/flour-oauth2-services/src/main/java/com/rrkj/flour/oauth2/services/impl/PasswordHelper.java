@@ -71,4 +71,8 @@ public class PasswordHelper {
 		return pwd;
 	}
 
+	public static void main(String[] args) {
+		System.out.println(new PasswordHelper().encryptPassword("admin", "admin", "15801582284"));
+	}
+
 }
