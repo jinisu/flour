@@ -28,7 +28,7 @@ public class WebUtil {
 		long userid = 0;
 		Map<String, String> user = (Map<String, String>) request.getAttribute("user");
 		if (user != null) {
-			userid = Long.valueOf(user.get("uid").toString());
+			userid = Long.valueOf(user.get("userid").toString());
 		}
 		return userid;
 	}

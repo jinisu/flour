@@ -82,6 +82,11 @@
 			<artifactId>flour-user-api</artifactId>
 			<version>0.0.1</version>
 		</dependency>
+		<dependency>
+			<groupId>com.rrkj.flour</groupId>
+			<artifactId>flour-oauth2-api</artifactId>
+			<version>0.0.1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

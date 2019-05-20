@@ -113,4 +113,9 @@ public class LoginService implements ILoginService {
 		return 0;
 	}
 
+	@Override
+	public LoginResponse checkAcessToken(String accessToken) {
+		return null;
+	}
+
 }

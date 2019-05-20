@@ -32,5 +32,7 @@ public interface ILoginService {
 
 	public int checkAcessToken(String accessToken, String clientid, String clientSecret);
 
+	public LoginResponse checkAcessToken(String accessToken);
+	
 	public int logout(String accessToken);
 }

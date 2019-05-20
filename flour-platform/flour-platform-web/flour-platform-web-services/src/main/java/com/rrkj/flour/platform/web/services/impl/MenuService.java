@@ -9,6 +9,7 @@
  */
 package com.rrkj.flour.platform.web.services.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rrkj.flour.authorize.api.ListTPermission;
@@ -16,6 +17,7 @@ import com.rrkj.flour.authorize.api.PermissionGrpcServiceGrpc.PermissionGrpcServ
 import com.rrkj.flour.authorize.api.TIdAndString;
 import com.rrkj.flour.platform.web.entities.WebApplication;
 import com.rrkj.flour.platform.web.services.IMenuService;
+import com.rrkj.flour.platform.web.services.IWebApplicationService;
 
 import net.devh.boot.grpc.client.inject.GrpcClient;
 
@@ -33,6 +35,9 @@ public class MenuService implements IMenuService {
 
 	@GrpcClient("authorize-service")
 	private PermissionGrpcServiceBlockingStub permissionStub;
+
+	@Autowired
+	private IWebApplicationService webappService;
 
 	@Override
 	public WebApplication queryAllMenu(long userid, Long roleid, String appKey, String domain) {
