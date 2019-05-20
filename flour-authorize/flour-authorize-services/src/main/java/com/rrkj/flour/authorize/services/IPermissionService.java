@@ -9,6 +9,8 @@
  */
 package com.rrkj.flour.authorize.services;
 
+import java.util.List;
+
 import com.rrkj.flour.authorize.entities.Permission;
 import com.rrkj.flour.utils.service.ICrudService;
 
@@ -22,5 +24,9 @@ import com.rrkj.flour.utils.service.ICrudService;
  * @version 1.0
  */
 public interface IPermissionService extends ICrudService<Permission, Long> {
+
+	public List<Permission> queryByRoleidAndAppKey(long id, String str);
+
+	public List<Permission> queryByRoleid(long id);
 
 }

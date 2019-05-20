@@ -9,6 +9,8 @@
  */
 package com.rrkj.flour.authorize.services;
 
+import java.util.List;
+
 import com.rrkj.flour.authorize.entities.Role;
 import com.rrkj.flour.utils.service.ICrudService;
 
@@ -22,5 +24,7 @@ import com.rrkj.flour.utils.service.ICrudService;
  * @version 1.0
  */
 public interface IRoleService extends ICrudService<Role, Long> {
+
+	public List<Role> queryByUserid(long id);
 
 }

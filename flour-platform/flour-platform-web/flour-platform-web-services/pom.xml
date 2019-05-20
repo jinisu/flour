@@ -62,6 +62,11 @@
 			<artifactId>flour-user-api</artifactId>
 			<version>0.0.1</version>
 		</dependency>
+		<dependency>
+			<groupId>com.rrkj.flour</groupId>
+			<artifactId>flour-authorize-api</artifactId>
+			<version>0.0.1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

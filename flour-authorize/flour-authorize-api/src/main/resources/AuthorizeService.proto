@@ -1,0 +1,68 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.rrkj.flour.authorize.api";
+option java_outer_classname = "AuthorizeServiceProto";
+option java_generic_services = true;
+
+message TPermission {
+	int64	id		= 1;
+	string	name	= 2;
+	string	ptype	= 3;
+	string	permission	= 4;
+	string	label	= 5;
+	string	descr	= 6;
+	int64	utime   = 7;
+	int64	ctime	= 8;
+	int32	status	= 9;
+}
+
+message TRole{
+	int64	id		= 1;
+	string	name	= 2;
+	string	title	= 3;
+	string	icon	= 4;
+	string	label	= 5;
+	string	descr	= 6;
+	int64	utime   = 7;
+	int64	ctime	= 8;
+	int32	status	= 9;
+}
+
+message TId{
+	int64	id	= 1;
+}
+
+message TIdAndString{
+	int64	id	= 1;
+	string	str = 2;
+}
+
+message ListTPermission{
+	repeated TPermission list	= 1;
+}
+
+message ListTRole{
+	repeated TRole list	= 1;
+}
+
+
+service PermissionGrpcService {
+
+	rpc queryById(TId) returns (TPermission) {}
+	
+	rpc queryPermissionByRoleidAndAppKey(TIdAndString) returns (ListTPermission) {}
+	
+	rpc queryPermissionByRoleid(TId) returns (ListTPermission) {}
+}
+
+service RoleGrpcService{
+
+	rpc queryById(TId) returns (TRole) {}
+
+	rpc queryPermissionByRoleid(TId) returns (ListTPermission) {}
+
+	rpc queryByUserid (TId) returns (ListTRole) {}
+	
+}

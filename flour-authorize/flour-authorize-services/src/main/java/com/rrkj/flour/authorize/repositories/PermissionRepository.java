@@ -9,6 +9,9 @@
  */
 package com.rrkj.flour.authorize.repositories;
 
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -25,5 +28,11 @@ import com.rrkj.flour.authorize.entities.Permission;
  */
 @Repository
 public interface PermissionRepository extends CrudRepository<Permission, Long> {
+
+	@Query(value = "select r.* from rrkj_flour_authorize_permission r, rrkj_flour_authorize_role_permission u where r.id = u.permission_id and u.role_id = ?1 and (u.app_key = '' or u.app_key = ?2 ) and r.`status` = 1 and u.`status` = 1 ", nativeQuery = true)
+	public List<Permission> queryByRoleidAndAppKey(long id, String str);
+
+	@Query(value = "select r.* from rrkj_flour_authorize_permission r, rrkj_flour_authorize_role_permission u where r.id = u.permission_id and u.role_id = ?1 and r.`status` = 1 and u.`status` = 1 ", nativeQuery = true)
+	public List<Permission> queryByRoleid(long id);
 
 }

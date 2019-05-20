@@ -9,6 +9,9 @@
  */
 package com.rrkj.flour.authorize.repositories;
 
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -25,5 +28,8 @@ import com.rrkj.flour.authorize.entities.Role;
  */
 @Repository
 public interface RoleRepository extends CrudRepository<Role, Long> {
+
+	@Query(value = "select r.* from rrkj_flour_authorize_role r, rrkj_flour_authorize_user_role u where r.id = u.role_id and u.userid = ?1 and r.`status` = 1 and u.`status` = 1 ", nativeQuery = true)
+	public List<Role> queryByUserid(long id);
 
 }

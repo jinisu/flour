@@ -36,7 +36,7 @@ public class UserRole extends StatefulEntity {
 	private long id;
 
 	@Column(length = 20, nullable = false)
-	private long userId;
+	private long userid;
 
 	@Column(length = 10, nullable = false)
 	private long roleId;
@@ -49,12 +49,12 @@ public class UserRole extends StatefulEntity {
 		this.id = id;
 	}
 
-	public long getUserId() {
-		return userId;
+	public void setUserid(long userid) {
+		this.userid = userid;
 	}
 
-	public void setUserId(long userId) {
-		this.userId = userId;
+	public long getUserid() {
+		return userid;
 	}
 
 	public long getRoleId() {

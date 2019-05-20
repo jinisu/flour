@@ -9,6 +9,9 @@
  */
 package com.rrkj.flour.authorize.services.impl;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rrkj.flour.authorize.entities.Role;
@@ -27,5 +30,14 @@ import com.rrkj.flour.utils.service.CrudService;
  */
 @Service
 public class RoleService extends CrudService<Role, Long, RoleRepository> implements IRoleService {
+
+	@Autowired
+	private RoleRepository repository;
+
+	@Override
+	public List<Role> queryByUserid(long id) {
+
+		return repository.queryByUserid(id);
+	}
 
 }

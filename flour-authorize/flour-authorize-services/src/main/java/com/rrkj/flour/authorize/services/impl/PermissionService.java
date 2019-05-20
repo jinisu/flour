@@ -9,6 +9,9 @@
  */
 package com.rrkj.flour.authorize.services.impl;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rrkj.flour.authorize.entities.Permission;
@@ -28,5 +31,18 @@ import com.rrkj.flour.utils.service.CrudService;
 @Service
 public class PermissionService extends CrudService<Permission, Long, PermissionRepository>
 		implements IPermissionService {
+
+	@Autowired
+	private PermissionRepository repository;
+
+	@Override
+	public List<Permission> queryByRoleidAndAppKey(long id, String str) {
+		return repository.queryByRoleidAndAppKey(id, str);
+	}
+
+	@Override
+	public List<Permission> queryByRoleid(long id) {
+		return repository.queryByRoleid(id);
+	}
 
 }
