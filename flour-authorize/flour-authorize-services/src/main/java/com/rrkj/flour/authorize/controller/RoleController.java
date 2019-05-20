@@ -9,6 +9,12 @@
  */
 package com.rrkj.flour.authorize.controller;
 
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.rrkj.flour.authorize.entities.Role;
+import com.rrkj.flour.authorize.services.IRoleService;
+import com.rrkj.flour.utils.web.CrudController;
 
 /**
  * <p> Title: [名称]</p>
@@ -19,6 +25,8 @@ package com.rrkj.flour.authorize.controller;
  * @author jinisu - jinisu@163.com
  * @version 1.0
  */
-public class RoleController {
+@RestController
+@RequestMapping("role")
+public class RoleController extends CrudController<Role, Long, IRoleService> {
 
 }

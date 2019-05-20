@@ -9,6 +9,8 @@
  */
 package com.rrkj.flour.authorize.services;
 
+import com.rrkj.flour.authorize.entities.Role;
+import com.rrkj.flour.utils.service.ICrudService;
 
 /**
  * <p> Title: [名称]</p>
@@ -19,6 +21,6 @@ package com.rrkj.flour.authorize.services;
  * @author jinisu - jinisu@163.com
  * @version 1.0
  */
-public interface IRoleService {
+public interface IRoleService extends ICrudService<Role, Long> {
 
 }

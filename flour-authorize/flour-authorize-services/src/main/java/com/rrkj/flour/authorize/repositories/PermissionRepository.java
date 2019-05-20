@@ -9,6 +9,10 @@
  */
 package com.rrkj.flour.authorize.repositories;
 
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.rrkj.flour.authorize.entities.Permission;
 
 /**
  * <p> Title: [名称]</p>
@@ -19,6 +23,7 @@ package com.rrkj.flour.authorize.repositories;
  * @author jinisu - jinisu@163.com
  * @version 1.0
  */
-public interface PermissionRepository {
+@Repository
+public interface PermissionRepository extends CrudRepository<Permission, Long> {
 
 }
