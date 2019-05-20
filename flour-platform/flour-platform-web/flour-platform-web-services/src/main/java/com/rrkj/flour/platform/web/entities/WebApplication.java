@@ -51,7 +51,7 @@ public class WebApplication extends StatefulEntity {
 	private String domain;
 
 	@OneToMany(cascade = { CascadeType.ALL })
-	@JoinTable(name = "rrkj_flour_platform_web_application_menu", joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "menu_id"))
+	@JoinTable(name = "rrkj_flour_platform_web_application_menu", joinColumns = @JoinColumn(name = "app_id"), inverseJoinColumns = @JoinColumn(name = "menu_id"))
 	private List<MenuItem> menus;
 
 	@Column(length = 1024, nullable = false)

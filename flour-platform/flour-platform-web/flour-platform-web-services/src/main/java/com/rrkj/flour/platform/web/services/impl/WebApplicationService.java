@@ -9,6 +9,7 @@
  */
 package com.rrkj.flour.platform.web.services.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rrkj.flour.platform.web.entities.WebApplication;
@@ -28,5 +29,13 @@ import com.rrkj.flour.utils.service.CrudService;
 @Service
 public class WebApplicationService extends CrudService<WebApplication, Long, WebApplicationRepository>
 		implements IWebApplicationService {
+
+	@Autowired
+	private WebApplicationRepository repository;
+
+	@Override
+	public WebApplication queryByAppKeyAndDomain(String appKey, String domain) {
+		return repository.queryByAppKeyAndDomain(appKey, domain);
+	}
 
 }

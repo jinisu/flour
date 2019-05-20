@@ -9,6 +9,8 @@
  */
 package com.rrkj.flour.platform.web.services;
 
+import org.springframework.data.jpa.repository.Query;
+
 import com.rrkj.flour.platform.web.entities.WebApplication;
 import com.rrkj.flour.utils.service.ICrudService;
 
@@ -22,5 +24,7 @@ import com.rrkj.flour.utils.service.ICrudService;
  * @version 1.0
  */
 public interface IWebApplicationService extends ICrudService<WebApplication, Long> {
+
+	public WebApplication queryByAppKeyAndDomain(String appKey, String domain);
 
 }

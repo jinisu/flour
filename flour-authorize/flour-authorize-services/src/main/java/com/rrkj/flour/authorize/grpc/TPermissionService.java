@@ -57,13 +57,15 @@ public class TPermissionService extends PermissionGrpcServiceGrpc.PermissionGrpc
 		List<Permission> permission = service.queryByRoleidAndAppKey(request.getId(), request.getStr());
 
 		ListTPermission list = null;
+		Builder builder = ListTPermission.newBuilder();
+
 		if (permission != null && permission.size() > 0) {
-			Builder builder = ListTPermission.newBuilder();
+
 			for (int i = 0, n = permission.size(); i < n; i++) {
-				builder.setList(i, this._Permission2TPermission(permission.get(i)));
+				builder.addList(this._Permission2TPermission(permission.get(i)));
 			}
-			list = builder.build();
 		}
+		list = builder.build();
 		responseObserver.onNext(list);
 		responseObserver.onCompleted();
 	}
@@ -79,7 +81,7 @@ public class TPermissionService extends PermissionGrpcServiceGrpc.PermissionGrpc
 		if (permission != null && permission.size() > 0) {
 			Builder builder = ListTPermission.newBuilder();
 			for (int i = 0, n = permission.size(); i < n; i++) {
-				builder.setList(i, this._Permission2TPermission(permission.get(i)));
+				builder.addList(this._Permission2TPermission(permission.get(i)));
 			}
 			list = builder.build();
 		}

@@ -66,7 +66,7 @@ public class TRoleService extends RoleGrpcServiceGrpc.RoleGrpcServiceImplBase {
 		if (permission != null && permission.size() > 0) {
 			Builder builder = ListTPermission.newBuilder();
 			for (int i = 0, n = permission.size(); i < n; i++) {
-				builder.setList(i, TPermissionService._Permission2TPermission(permission.get(i)));
+				builder.addList(TPermissionService._Permission2TPermission(permission.get(i)));
 			}
 			list = builder.build();
 		}
@@ -85,7 +85,7 @@ public class TRoleService extends RoleGrpcServiceGrpc.RoleGrpcServiceImplBase {
 		if (roles != null && roles.size() > 0) {
 			ListTRole.Builder builder = ListTRole.newBuilder();
 			for (int i = 0, n = roles.size(); i < n; i++) {
-				builder.setList(i, this._Role2TRole(roles.get(i)));
+				builder.addList(this._Role2TRole(roles.get(i)));
 			}
 			list = builder.build();
 		}

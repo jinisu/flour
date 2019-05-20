@@ -9,6 +9,7 @@
  */
 package com.rrkj.flour.platform.web.repositories;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -26,4 +27,6 @@ import com.rrkj.flour.platform.web.entities.WebApplication;
 @Repository
 public interface WebApplicationRepository extends CrudRepository<WebApplication, Long> {
 
+	@Query(value = "select a from WebApplication a where a.appKey = ?1 and a.status = 1 ")
+	public WebApplication queryByAppKeyAndDomain(String appKey, String domain);
 }

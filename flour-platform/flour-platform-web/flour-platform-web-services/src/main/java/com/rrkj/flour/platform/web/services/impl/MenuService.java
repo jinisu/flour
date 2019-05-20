@@ -9,6 +9,9 @@
  */
 package com.rrkj.flour.platform.web.services.impl;
 
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,12 +45,25 @@ public class MenuService implements IMenuService {
 	@Override
 	public WebApplication queryAllMenu(long userid, Long roleid, String appKey, String domain) {
 		// 获取用户的权限，
+		WebApplication webapp = webappService.queryByAppKeyAndDomain(appKey, domain);
+		try {
+			// 获取应用的菜单
+			ListTPermission tplist = permissionStub
+					.queryPermissionByRoleidAndAppKey(TIdAndString.newBuilder().setId(roleid).setStr(appKey).build());
+			System.out.println(tplist.getListCount());
 
-		// 获取应用的菜单
-		ListTPermission tplist = permissionStub
-				.queryPermissionByRoleidAndAppKey(TIdAndString.newBuilder().setId(roleid).setStr(appKey).build());
+			if (tplist.getListCount() > 0 && webapp.getMenus().size() > 0) {
+				Set<String> codes = tplist.getListList().stream().map(r -> r.getPermission())
+						.collect(Collectors.toSet());
+				webapp.setMenus(webapp.getMenus().stream().filter(r -> {
+					return codes.contains(r.getCode());
+				}).collect(Collectors.toList()));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-		return null;
+		return webapp;
 	}
 
 }
